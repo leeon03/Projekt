@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🔹 Dein eigener CSS-Code beginnt hier */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.custom-button {
+    background-color: #1B5E20;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #145A1F;
+}
