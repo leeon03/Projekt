@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CamperLife - Dein Abenteuer beginnt hier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Sanfte Animationen */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards ease-out;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    
+  <!-- Navigation -->
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <div class="container mx-auto flex justify-between items-center py-2 px-4">
+        <div class="flex items-center space-x-4">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="../assets/Logo.png" alt="CamperLife Logo" class="h-auto max-h-[50px] w-auto">
+            </a>
+            <nav class="hidden md:flex space-x-4">
+                <a href="#" class="text-gray-700 hover:text-teal-600">Stellplatzsuche</a>
+                <a href="#" class="text-gray-700 hover:text-teal-600">Routenplanung</a>
+                <a href="#" class="text-gray-700 hover:text-teal-600">Community</a>
+                <a href="#" class="text-gray-700 hover:text-teal-600">Marktplatz</a>
+            </nav>
+        </div>
+        <button class="bg-teal-500 text-white px-5 py-1.5 rounded-lg hover:bg-teal-700 transition">Login</button>
+    </div>
+</header>
+
+    <!-- Hero Bereich mit Hintergrundvideo -->
+<section class="relative h-screen flex flex-col justify-center items-center text-center text-white">
+    <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline>
+        <source src="../assets/Hero.mp4" type="video/mp4">
+        Dein Browser unterstützt kein HTML5-Video.
+    </video>
+    <div class="bg-black bg-opacity-50 absolute inset-0"></div>
+    <div class="z-10">
+        <h1 class="text-6xl font-extrabold">Willkommen bei CamperLife</h1>
+        <p class="mt-4 text-xl">Entdecke die Freiheit des Campens mit unserer Plattform</p>
+        <button class="mt-6 bg-teal-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition">
+            Jetzt entdecken
+        </button>
+    </div>
+</section>
+
+
+    <!-- Suchleiste -->
+    <section class="relative -mt-10 z-20 w-full flex justify-center fade-in">
+        <div class="bg-white shadow-lg p-4 rounded-lg w-11/12 md:w-3/4 lg:w-1/2 flex items-center">
+            <input type="text" placeholder="Suche nach Stellplätzen..." class="flex-grow p-3 rounded-lg text-black border border-gray-300">
+            <button class="bg-teal-500 text-white px-6 py-3 rounded-lg ml-4 hover:bg-teal-700 transition">Suchen</button>
+        </div>
+    </section>
+    
+    <!-- Features -->
+    <section class="container mx-auto py-16 text-center fade-in">
+        <h2 class="text-4xl font-bold mb-8">Unsere Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+            <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105">
+                <h3 class="text-2xl font-semibold text-teal-600 flex items-center justify-center gap-2">
+                    <span>🔍</span> Stellplatzsuche
+                </h3>
+                <p class="mt-4 text-gray-700">Finde den perfekten Ort für dein Abenteuer. Nutze unsere interaktive Karte und Filtermöglichkeiten.</p>
+            </div>
+            <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105">
+                <h3 class="text-2xl font-semibold text-teal-600 flex items-center justify-center gap-2">
+                    <span>📌</span> Routenplanung
+                </h3>
+                <p class="mt-4 text-gray-700">Erstelle, speichere und teile deine Lieblingsrouten mit der Community und entdecke empfohlene Strecken.</p>
+            </div>
+            <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105">
+                <h3 class="text-2xl font-semibold text-teal-600 flex items-center justify-center gap-2">
+                    <span>📖</span> Reisetagebuch
+                </h3>
+                <p class="mt-4 text-gray-700">Dokumentiere deine schönsten Erlebnisse mit Texten, Bildern und interaktiven Karten.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Bereich -->
+    <section class="bg-teal-600 text-white py-16 text-center fade-in">
+        <h2 class="text-4xl font-bold">Bereit für dein nächstes Abenteuer?</h2>
+        <p class="mt-4 text-lg">Melde dich jetzt an und entdecke alle Funktionen von CamperLife!</p>
+        <button class="mt-6 bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-200 transition">Jetzt registrieren</button>
+    </section>
+
+     <!-- Abo Modell Bereich -->
+     <section class="container mx-auto py-16 text-center fade-in">
+        <h2 class="text-4xl font-bold">Unser Abo-Modell</h2>
+        <p class="mt-4 text-lg">Wähle das passende Paket für deine Camping-Abenteuer.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+            <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-xl transition">
+                <h3 class="text-2xl font-semibold text-teal-600">🚐 Basic</h3>
+                <p>Ideal für Einsteiger. Entdecke kostenlose Stellplätze und grundlegende Funktionen.</p>
+            </div>
+            <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-xl transition border-2 border-teal-500">
+                <h3 class="text-2xl font-semibold text-teal-600">🌟 Premium</h3>
+                <p>Erhalte exklusive Stellplätze, erweiterte Routenplanung und Community-Features.</p>
+            </div>
+            <div class="p-8 bg-white rounded-lg shadow-md hover:shadow-xl transition">
+                <h3 class="text-2xl font-semibold text-teal-600">🏕 Ultimate</h3>
+                <p>Für echte Abenteuerlustige: Premium-Vorteile + exklusive Events und Rabatte.</p>
+            </div>
+        </div>
+        <button class="mt-6 bg-teal-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition">Mehr erfahren</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 text-center fade-in">
+        <p>&copy; 2025 CamperLife. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>

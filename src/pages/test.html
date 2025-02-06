@@ -1,36 +1,83 @@
-import React from "react";
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wohnmobil-Abenteuer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#F5F5DC] text-gray-900">
 
-export default function Layout({ children }) {
-  return (
-    <div className="min-h-screen bg-gray-100 text-gray-900">
-      {/* Header */}
-      <header className="bg-white shadow-md fixed w-full z-10">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-green-700">CamperLife</h1>
-          <nav className="hidden md:flex space-x-6">
-            <a href="#" className="text-blue-700 hover:text-blue-900">Stellplatzsuche</a>
-            <a href="#" className="text-blue-700 hover:text-blue-900">Routenplaner</a>
-            <a href="#" className="text-blue-700 hover:text-blue-900">Marktplatz</a>
-            <a href="#" className="text-blue-700 hover:text-blue-900">Community</a>
-          </nav>
-          <button className="md:hidden text-blue-700">☰</button>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-[#2E7D32]">🚐 Wohnmobil-Abenteuer</h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#" class="text-gray-800 hover:text-[#00796B] font-medium">Start</a></li>
+                <li><a href="#" class="text-gray-800 hover:text-[#00796B] font-medium">Reiserouten</a></li>
+                <li><a href="#" class="text-gray-800 hover:text-[#00796B] font-medium">Campingplätze</a></li>
+                <li><a href="#" class="text-gray-800 hover:text-[#00796B] font-medium">Zubehör</a></li>
+                <li><a href="#" class="text-gray-800 hover:text-[#00796B] font-medium">Community</a></li>
+            </ul>
+            <button class="md:hidden text-[#00796B] text-2xl">☰</button>
         </div>
-      </header>
+    </nav>
 
-      {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-4 pt-24 pb-16">{children}</main>
+    <!-- Hero Bereich -->
+    <header class="bg-[#2E7D32] text-white text-center py-20">
+        <h2 class="text-5xl font-extrabold">Dein nächstes Abenteuer beginnt hier!</h2>
+        <p class="mt-4 text-lg opacity-90">Entdecke die besten Reiserouten, Campingplätze und Tipps für dein Wohnmobil.</p>
+        <a href="#" class="mt-6 inline-block bg-[#FBC02D] text-gray-900 px-8 py-3 rounded-full shadow-lg hover:bg-[#E5A50A] transition text-lg font-semibold">
+            Jetzt Entdecken
+        </a>
+    </header>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-6 mt-10">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p>&copy; 2024 CamperLife – Alle Rechte vorbehalten.</p>
-          <div className="flex justify-center space-x-4 mt-4">
-            <a href="#" className="hover:text-gray-400">Datenschutz</a>
-            <a href="#" className="hover:text-gray-400">Impressum</a>
-            <a href="#" className="hover:text-gray-400">Kontakt</a>
-          </div>
+    <!-- Inhalt: 3 Spalten -->
+    <section class="container mx-auto py-16 px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <!-- Reiserouten -->
+            <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+                <h3 class="text-2xl font-bold text-[#2E7D32]">🗺️ Reiserouten</h3>
+                <p class="text-gray-600 mt-2">Finde inspirierende Routen für dein nächstes Abenteuer.</p>
+                <a href="#" class="text-[#00796B] mt-4 block font-semibold hover:underline">Mehr erfahren →</a>
+            </div>
+
+            <!-- Campingplätze -->
+            <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+                <h3 class="text-2xl font-bold text-[#2E7D32]">🏕️ Campingplätze</h3>
+                <p class="text-gray-600 mt-2">Entdecke die schönsten Campingplätze und teile deine Erfahrungen.</p>
+                <a href="#" class="text-[#00796B] mt-4 block font-semibold hover:underline">Mehr erfahren →</a>
+            </div>
+
+            <!-- Zubehör -->
+            <div class="bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition">
+                <h3 class="text-2xl font-bold text-[#2E7D32]">🛠️ Zubehör</h3>
+                <p class="text-gray-600 mt-2">Finde die beste Ausrüstung für dein Wohnmobil und Vanlife.</p>
+                <a href="#" class="text-[#00796B] mt-4 block font-semibold hover:underline">Mehr erfahren →</a>
+            </div>
+
         </div>
-      </footer>
-    </div>
-  );
-}
+    </section>
+
+    <!-- Community Bereich -->
+    <section class="bg-[#37474F] py-16 text-center text-white">
+        <h2 class="text-4xl font-extrabold">👥 Werde Teil unserer Community</h2>
+        <p class="mt-4 text-lg opacity-90">Tausche dich mit anderen Campern aus, teile Tipps und erlebe das Vanlife gemeinsam.</p>
+        <a href="#" class="mt-6 inline-block bg-[#FBC02D] text-gray-900 px-8 py-3 rounded-full shadow-lg hover:bg-[#E5A50A] transition text-lg font-semibold">
+            Jetzt beitreten
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2E7D32] text-white text-center py-8 mt-16">
+        <p class="text-lg">&copy; 2025 Wohnmobil-Abenteuer. Alle Rechte vorbehalten.</p>
+        <div class="mt-4">
+            <a href="#" class="text-gray-300 hover:text-gray-100 mx-2">Datenschutz</a> |
+            <a href="#" class="text-gray-300 hover:text-gray-100 mx-2">Impressum</a> |
+            <a href="#" class="text-gray-300 hover:text-gray-100 mx-2">Kontakt</a>
+        </div>
+    </footer>
+
+</body>
+</html>
