@@ -56,15 +56,16 @@
     <div class="z-10">
         <h1 class="text-6xl font-extrabold">Willkommen bei CamperLife</h1>
         <p class="mt-4 text-xl">Entdecke die Freiheit des Campens mit unserer Plattform</p>
-        <button class="mt-6 bg-teal-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition">
-            Jetzt entdecken
+        <button onclick="scrollToSection('features')" 
+        class="mt-6 bg-teal-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition">
+        Jetzt entdecken
         </button>
     </div>
 </section>
 
 
     <!-- Suchleiste -->
-    <section class="relative -mt-10 z-20 w-full flex justify-center fade-in">
+    <section id="features" class="relative -mt-10 z-20 w-full flex justify-center fade-in">
         <div class="bg-white shadow-lg p-4 rounded-lg w-11/12 md:w-3/4 lg:w-1/2 flex flex-col">
             <div class="flex items-center">
                 <input id="searchInput" type="text" placeholder="Suche nach Städten oder Ländern..." 
@@ -105,7 +106,8 @@
     <section class="bg-teal-600 text-white py-16 text-center fade-in">
         <h2 class="text-4xl font-bold">Bereit für dein nächstes Abenteuer?</h2>
         <p class="mt-4 text-lg">Melde dich jetzt an und entdecke alle Funktionen von CamperLife!</p>
-        <button class="mt-6 bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-200 transition">Jetzt registrieren</button>
+        <button onclick="window.location.href='login.html'" 
+        class="mt-6 bg-white text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-200 transition">Jetzt registrieren</button>
     </section>
 
      <!-- Abo Modell Bereich -->
@@ -133,5 +135,14 @@
     <footer class="bg-gray-900 text-white py-8 text-center fade-in">
         <p>&copy; 2025 CamperLife. Alle Rechte vorbehalten.</p>
     </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
 </body>
 </html>
