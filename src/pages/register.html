@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrieren | CamperLife</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <style>
+        /* Fade-in Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(-10px);
+            animation: fadeIn 0.5s forwards ease-in-out;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .suggestion-list {
+            position: absolute;
+            background: white;
+            border: 1px solid #ddd;
+            width: 100%;
+            max-height: 150px;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .suggestion-list div {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .suggestion-list div:hover {
+            background: #f1f1f1;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white shadow-lg rounded-lg p-8 w-96 fade-in">
+        
+        <!-- Zurück Button -->
+        <button onclick="goBack()" class="mb-4 text-teal-600 hover:underline flex items-center">
+            ⬅ Zurück
+        </button>
+
+        <h2 class="text-2xl font-bold text-gray-800 text-center">Erstelle deinen Account</h2>
+        <p class="text-gray-500 text-center mb-6">Starte dein Camper-Abenteuer!</p>
+
+        <form action="#" method="POST">
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block mb-2 text-gray-700 font-semibold">Vorname</label>
+                    <input type="text" placeholder="Max" required class="w-full p-3 border rounded-lg">
+                </div>
+                <div>
+                    <label class="block mb-2 text-gray-700 font-semibold">Nachname</label>
+                    <input type="text" placeholder="Mustermann" required class="w-full p-3 border rounded-lg">
+                </div>
+            </div>
+
+            <label class="block mt-4 mb-2 text-gray-700 font-semibold">E-Mail</label>
+            <input type="email" placeholder="max@beispiel.de" required class="w-full p-3 border rounded-lg">
+
+            <label class="block mt-4 mb-2 text-gray-700 font-semibold">Passwort</label>
+            <input type="password" placeholder="••••••••" required id="password" class="w-full p-3 border rounded-lg">
+
+            <label class="block mt-4 mb-2 text-gray-700 font-semibold">Passwort bestätigen</label>
+            <input type="password" placeholder="••••••••" required id="confirmPassword" class="w-full p-3 border rounded-lg">
+            <p id="passwordError" class="text-red-500 text-sm hidden">Passwörter stimmen nicht überein!</p>
+
+            <!-- Geburtsdatum mit Flatpickr -->
+            <label class="block mt-4 mb-2 text-gray-700 font-semibold">Geburtsdatum</label>
+            <input type="text" id="birthdate" required class="w-full p-3 border rounded-lg bg-white">
+
+            <label class="block mt-4 mb-2 text-gray-700 font-semibold">Telefonnummer</label>
+            <input type="tel" placeholder="+49 123 4567890" required class="w-full p-3 border rounded-lg">
+                   
+            <label class="block mb-2 text-gray-700 font-semibold">Adresse</label>
+            <div class="relative">
+                <input type="text" id="addressInput" placeholder="Straße, Hausnummer, PLZ, Stadt" required class="w-full p-3 border rounded-lg">
+                <div id="addressSuggestions" class="suggestion-list hidden"></div>
+            </div>
+
+            <!-- Versteckte Felder für Adresse -->
+            <div id="addressDetails" class="hidden">
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div>
+                        <label class="block mb-2 text-gray-700 font-semibold">Straße</label>
+                        <input type="text" id="street" readonly class="w-full p-3 border rounded-lg bg-gray-100">
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-gray-700 font-semibold">Hausnummer</label>
+                        <input type="text" id="houseNumber" class="w-full p-3 border rounded-lg">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div>
+                        <label class="block mb-2 text-gray-700 font-semibold">PLZ</label>
+                        <input type="text" id="zip" readonly class="w-full p-3 border rounded-lg bg-gray-100">
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-gray-700 font-semibold">Stadt</label>
+                        <input type="text" id="city" readonly class="w-full p-3 border rounded-lg bg-gray-100">
+                    </div>
+                </div>
+
+                <label class="block mt-4 mb-2 text-gray-700 font-semibold">Land</label>
+                <input type="text" id="country" readonly class="w-full p-3 border rounded-lg bg-gray-100">
+            </div>
+
+            <button type="submit" class="mt-6 w-full bg-teal-500 text-white py-3 rounded-lg font-semibold hover:bg-teal-700">
+                Registrieren
+            </button>
+        </form>
+
+    </div>
+
+    <!-- Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            flatpickr("#birthdate", {
+                dateFormat: "d.m.Y",
+                maxDate: "today",
+                locale: "de"
+            });
+        });
+
+        function goBack() {
+            const referrer = document.referrer;
+            if (referrer.includes("login.html")) {
+                window.location.href = "login.html";
+            } else {
+                window.history.back();
+            }
+        }
+    </script>
+
+</body>
+</html>

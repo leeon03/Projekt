@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CamperLife - Dein Abenteuer beginnt hier</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/search.js"></script>
+
     <style>
         /* Sanfte Animationen */
         .fade-in {
@@ -30,13 +32,17 @@
                 <img src="../assets/Logo.png" alt="CamperLife Logo" class="h-auto max-h-[50px] w-auto">
             </a>
             <nav class="hidden md:flex space-x-4">
+                <a href="startseite.html" class="text-gray-700 hover:text-teal-600">Startseite</a>
                 <a href="#" class="text-gray-700 hover:text-teal-600">Stellplatzsuche</a>
                 <a href="#" class="text-gray-700 hover:text-teal-600">Routenplanung</a>
                 <a href="#" class="text-gray-700 hover:text-teal-600">Community</a>
                 <a href="#" class="text-gray-700 hover:text-teal-600">Marktplatz</a>
             </nav>
         </div>
-        <button class="bg-teal-500 text-white px-5 py-1.5 rounded-lg hover:bg-teal-700 transition">Login</button>
+        <button onclick="window.location.href='login.html'" 
+        class="bg-teal-500 text-white px-5 py-1.5 rounded-lg hover:bg-teal-700 transition">Login
+</button>
+
     </div>
 </header>
 
@@ -59,11 +65,16 @@
 
     <!-- Suchleiste -->
     <section class="relative -mt-10 z-20 w-full flex justify-center fade-in">
-        <div class="bg-white shadow-lg p-4 rounded-lg w-11/12 md:w-3/4 lg:w-1/2 flex items-center">
-            <input type="text" placeholder="Suche nach Stellplätzen..." class="flex-grow p-3 rounded-lg text-black border border-gray-300">
-            <button class="bg-teal-500 text-white px-6 py-3 rounded-lg ml-4 hover:bg-teal-700 transition">Suchen</button>
+        <div class="bg-white shadow-lg p-4 rounded-lg w-11/12 md:w-3/4 lg:w-1/2 flex flex-col">
+            <div class="flex items-center">
+                <input id="searchInput" type="text" placeholder="Suche nach Städten oder Ländern..." 
+                       class="flex-grow p-3 rounded-lg text-black border border-gray-300">
+                <button class="bg-teal-500 text-white px-6 py-3 rounded-lg ml-4 hover:bg-teal-700 transition">Suchen</button>
+            </div>
+            <div id="suggestions" class="bg-white shadow-md rounded-lg mt-2 max-h-48 overflow-y-auto hidden"></div>
         </div>
-    </section>
+    </section>    
+    
     
     <!-- Features -->
     <section class="container mx-auto py-16 text-center fade-in">

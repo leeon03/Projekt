@@ -1,0 +1,65 @@
+/* Grundlegendes Styling für FullCalendar */
+.fc {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff; /* Hintergrund auf Weiß setzen */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Header Styling */
+.fc-toolbar {
+    background-color: #2A9D8F; /* Primärfarbe deiner Seite */
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+/* Buttons anpassen */
+.fc-button {
+    background-color: #14b8a6 !important; /* Tailwind teal-500 */
+    color: white !important;
+    border-radius: 6px !important;
+    padding: 6px 12px !important;
+    border: none !important;
+}
+.fc-button:hover {
+    background-color: #0f766e !important; /* Dunklere Farbe beim Hover */
+}
+
+/* Events im Kalender */
+.fc-event {
+    background-color: #E76F51 !important; /* Deine Sekundärfarbe */
+    border: 1px solid #C95B3A !important;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 6px;
+}
+
+/* Tageszellen */
+.fc-daygrid-day {
+    background-color: #f9fafb; /* Hellgrau für leere Felder */
+}
+.fc-day-today {
+    background-color: rgba(20, 184, 166, 0.2) !important; /* Markiert den heutigen Tag */
+}
+
+/* Listenansicht */
+.fc-list-day {
+    background-color: #f1f5f9; /* Hintergrundfarbe für Tagesübersicht */
+    border-left: 4px solid #2A9D8F; /* Farbiger Akzent */
+}
+
+/* Modal-Popups oder Hinweise */
+.fc-popover {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation in FullCalendar */
+.fc-prev-button, .fc-next-button, .fc-today-button {
+    background-color: #264653 !important;
+    color: white !important;
+    border-radius: 6px !important;
+}
